@@ -20,6 +20,11 @@ module consoled;
 import std.typecons, std.algorithm;
 import std.array : replicate;
 
+version (OSX)
+{
+    //Special code for OS X.
+    enum TIOCGWINSZ = 0x40087468;
+}
 
 /// Console output stream
 enum ConsoleOutputStream
